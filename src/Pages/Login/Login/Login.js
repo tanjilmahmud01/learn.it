@@ -7,6 +7,8 @@ import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 import { Container } from 'react-bootstrap';
+import { FaGoogle, FaGithub } from "react-icons/fa";
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 
 
@@ -14,7 +16,7 @@ import { Container } from 'react-bootstrap';
 const Login = () => {
 
     const [error, setError] = useState('');
-    const { signIn, setLoading } = useContext(AuthContext);
+    const { signIn, setLoading, providerLogin } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -36,7 +38,7 @@ const Login = () => {
                 }
 
                 else {
-                    toast.error('Your Email is not verfied. Please verify our email address')
+                    toast.error('Your Email is not verfied. Please verify your email address')
                 }
             })
             .catch(error => {
@@ -47,6 +49,59 @@ const Login = () => {
                 setLoading(false);
             })
     }
+
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleSignInWithGoogle = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setError('');
+                if (user.emailVerified) {
+                    navigate(from, { replace: true })
+                }
+
+                else {
+                    toast.error('Your Email is not verfied. Please verify your email address')
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                setError(error.message);
+            })
+            .finally(() => {
+                setLoading(false);
+            })
+    }
+
+
+    const githubProvider = new GithubAuthProvider();
+
+    const handleSignInWithGithub = () => {
+        providerLogin(githubProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setError('');
+                if (user.emailVerified) {
+                    navigate(from, { replace: true })
+                }
+
+                else {
+                    toast.error('Your Email is not verfied. Please verify your email address')
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                setError(error.message);
+            })
+            .finally(() => {
+                setLoading(false);
+            })
+    }
+
+
 
     return (
 
@@ -81,6 +136,17 @@ const Login = () => {
                 </Form.Group>
 
                 <Form.Group className='mt-3 col col-md-4 mx-auto'>
+                    <Form.Text className=''>
+                        Login with Google or Github?
+                        <br />
+                        <div className='mt-2 mb-2'>
+                            <button className='border-0 bg-transparent'><FaGoogle onClick={handleSignInWithGoogle} className='fs-4 text-primary me-3'></FaGoogle></button>
+                            <button className='border-0 bg-transparent'><FaGithub onClick={handleSignInWithGithub} className='fs-4 text-primary me-3'></FaGithub></button>
+                        </div>
+
+                    </Form.Text>
+
+
                     <Form.Text className=''>
                         New to Learn IT? Please <Link className='fw-semibold' to='/register'>Register</Link> Here.
                     </Form.Text>
