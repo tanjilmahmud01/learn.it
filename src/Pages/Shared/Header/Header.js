@@ -158,6 +158,7 @@ const Header = () => {
                             >
                                 HOME
                             </NavLink>
+
                             <NavLink
                                 to="/register"
                                 className={({ isActive, isPending }) =>
@@ -178,9 +179,18 @@ const Header = () => {
 
 
 
+
                             <NavDropdown className='fw-semibold hover-underline-animation ms-2' show={showDropdown} onMouseEnter={() => setShowDropdown(true)}
                                 onMouseLeave={() => setShowDropdown(false)} title="COURSES" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.1">
+
+                                    <Link
+                                        to="/courses"
+                                        className="dropdown-option-no-underline"
+                                    >
+                                        See All Courses
+                                    </Link>
+                                </NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">
                                     Another action
                                 </NavDropdown.Item>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import CourseCard from '../Shared/CourseCard';
+import CourseCard from '../Shared/CourseCard/CourseCard';
 import { Col, Container, Row } from 'react-bootstrap';
 
 const Home = () => {
