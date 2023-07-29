@@ -1,7 +1,8 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CourseCard from '../Shared/CourseCard/CourseCard';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Carousel, Col, Container, Row } from 'react-bootstrap';
+import pic1 from '../../assets/45271.jpg';
 
 const Home = () => {
 
@@ -10,9 +11,10 @@ const Home = () => {
 
     return (
         <div>
-            <h3>Total Course Found: {allCourses.length}</h3>
+
 
             <Container>
+
                 <Row className=''>
                     {
                         allCourses.map(course => {

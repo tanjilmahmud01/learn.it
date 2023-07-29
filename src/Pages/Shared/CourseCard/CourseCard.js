@@ -20,14 +20,17 @@ const CourseCard = ({ course }) => {
                     <Card.Text>
                         {/* stack hocche pashapashi element boshanor jonno ekta react bootstrap er element. */}
                         <Stack direction='horizontal' gap={1}>
-                            <p className='ratingText fw-bolder fs-6 border border-primary'>{course_rating}</p>
-                            <p className='border border-danger d-flex flex-column justify-content-center'><StarRatings
-                                rating={course_rating}
-                                starRatedColor="orange"
-                                starDimension="20px"
-                                starSpacing="2px"
-                            /></p>
-                            <p>({course_reviews})</p>
+                            <div className='d-flex align-items-center'>
+                                <span className='me-1 mt-1 ratingText fw-bolder fs-5'>{course_rating}</span>
+                                <span className=' d-flex flex-column justify-content-center'><StarRatings
+                                    rating={course_rating}
+                                    starRatedColor="orange"
+                                    starDimension="20px"
+                                    starSpacing="2px"
+                                /></span>
+                                <span className='mt-1 ms-2'>({course_reviews})</span>
+
+                            </div>
 
                         </Stack>
 
@@ -38,7 +41,7 @@ const CourseCard = ({ course }) => {
 
                     </Card.Text>
                     <Card.Text>
-                        <p className='fw-bolder fs-3'>${course_fee}</p>
+                        <span className='fw-bolder fs-3'>${course_fee}</span>
                     </Card.Text>
                     <Link to='/courses'>
                         <Button variant="primary">See All Courses</Button>
