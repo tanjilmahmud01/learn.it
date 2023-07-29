@@ -23,7 +23,7 @@ const CourseByCategory = () => {
                                 coursesByCategory.map(course => {
                                     return (
 
-                                        <Col className='mb-4' lg={5}>
+                                        <Col className='mb-4' lg={4}>
                                             <CourseCard
                                                 key={course.course_id}
                                                 course={course}

@@ -221,7 +221,7 @@ const Header = () => {
                                             {user?.photoURL
 
                                                 ?
-
+                                                // for tooltip use OverlayTrigger element
                                                 <OverlayTrigger
                                                     placement="right"
                                                     delay={{ show: 250, hide: 400 }}
@@ -269,7 +269,10 @@ const Header = () => {
                                         >
                                             REGISTER
                                         </NavLink>
+
                                     </div>
+
+
                             }
                         </Nav>
 

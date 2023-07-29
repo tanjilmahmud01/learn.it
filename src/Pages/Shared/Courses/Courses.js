@@ -1,8 +1,13 @@
 import React from 'react';
 import Categories from '../Categories/Categories';
 import { Col, Container, Row } from 'react-bootstrap';
+import { useLoaderData } from 'react-router-dom';
+import CourseCard from '../CourseCard/CourseCard';
 
 const Courses = () => {
+
+    const allCoursesByCategory = useLoaderData();
+
     return (
         <div>
             <Container>
@@ -11,8 +16,26 @@ const Courses = () => {
                     <Col lg="3">
                         <Categories></Categories>
                     </Col>
-                    <Col lg="9">
-                        <h2>This is courses page</h2>
+                    <Col className='' lg="9">
+                        <Row>
+                            {
+                                allCoursesByCategory.map(course => {
+                                    return (
+
+                                        <Col className='mb-4' lg={4}>
+                                            <CourseCard
+                                                key={course.course_id}
+                                                course={course}
+                                            ></CourseCard>
+                                        </Col>
+
+
+                                    )
+                                }
+
+                                )
+                            }
+                        </Row>
                     </Col>
                 </Row>
             </Container>
