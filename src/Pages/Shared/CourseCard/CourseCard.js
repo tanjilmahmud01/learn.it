@@ -43,8 +43,8 @@ const CourseCard = ({ course }) => {
                     <Card.Text>
                         <span className='fw-bolder fs-3'>${course_fee}</span>
                     </Card.Text>
-                    <Link to='/courses'>
-                        <Button variant="primary">See All Courses</Button>
+                    <Link to={`/course-details/${course_id}`}>
+                        <Button variant="primary">See Details</Button>
                     </Link>
 
                 </Card.Body>
