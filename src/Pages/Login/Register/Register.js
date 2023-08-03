@@ -70,9 +70,11 @@ const Register = () => {
 
     return (
         <Container className='mt-3'>
-            <h2>Please Register Here</h2>
+
             <Form className='' onSubmit={handleSubmit}>
                 <Form.Group className="mb-3 col col-md-4 mx-auto" controlId="formBasicEmail">
+                    <Form.Label className='h2 mb-5'>Please Register Here</Form.Label>
+                    <br />
                     <Form.Label>Enter Your Name</Form.Label>
                     <Form.Control name='name' type="text" placeholder="Name" required />
 

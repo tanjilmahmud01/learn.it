@@ -1,9 +1,11 @@
-import { faCertificate, faGears, faInfinity, faTicket, faVideo } from '@fortawesome/free-solid-svg-icons';
+import { faCertificate, faDownload, faGears, faInfinity, faTicket, faVideo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
+import React, { createRef, useEffect, useRef, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import './CourseDetails.css';
 import StarRatings from 'react-star-ratings';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import Pdf from 'react-to-pdf';
 
 const CourseDetails = () => {
 
@@ -17,6 +19,14 @@ const CourseDetails = () => {
             .then(data => setSelectedCategory(data))
     }, []);
 
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            Download Course Details as PDF
+        </Tooltip>
+    );
+
+    const ref = useRef();
+
 
     return (
         <div>
@@ -25,12 +35,37 @@ const CourseDetails = () => {
                 <h2 className="pb-2 border-bottom">{selectedCategory.name} / {selectedCourse?.course_title}</h2>
 
                 <div className="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-                    <div className="col d-flex flex-column align-items-start gap-2">
+                    <div ref={ref} className="col d-flex flex-column align-items-start gap-2">
                         <img className='img-fluid rounded' src={selectedCourse?.course_banner} alt="" />
-                        <h2 className="fw-bold text-body-emphasis">{selectedCourse?.course_title}</h2>
+
+                        <div className='d-flex align-items-center justify-content-between w-100'>
+
+                            <h2 className="fw-bold text-body-emphasis w-75">{selectedCourse?.course_title}</h2>
+
+
+
+
+
+                            <Pdf targetRef={ref} filename='course_details.pdf'>
+                                {({ toPdf }) => (
+                                    <OverlayTrigger placement="right"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={renderTooltip}>
+                                        <button onClick={toPdf} >
+                                            <FontAwesomeIcon icon={faDownload}></FontAwesomeIcon>
+                                        </button>
+                                    </OverlayTrigger>
+                                )}
+                            </Pdf>
+
+
+
+
+                        </div>
+
                         <p className="text-body-secondary">{selectedCourse?.course_description}</p>
 
-                        <div className='mb-2 d-flex align-items-center justify-content-between'>
+                        <div className='mb-2 d-sm-flex flex-sm-column flex-md-row align-items-center justify-content-sm-start justify-content-between'>
                             <span className='me-1 mt-1 ratingText fw-bolder fs-5'>{selectedCourse?.course_rating}</span>
                             <span className=' d-flex flex-column justify-content-center'><StarRatings
                                 rating={selectedCourse?.course_rating}
@@ -38,7 +73,7 @@ const CourseDetails = () => {
                                 starDimension="18px"
                                 starSpacing="2px"
                             /></span>
-                            <span className='ms-2'>({selectedCourse?.course_reviews} ratings)</span>
+                            <span className=''>({selectedCourse?.course_reviews} ratings)</span>
                             <span className='ms-2 me-1'>({selectedCourse?.course_enrolled_students} students enrolled)</span>
 
                         </div>
@@ -90,8 +125,8 @@ const CourseDetails = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 

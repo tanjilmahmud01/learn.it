@@ -106,11 +106,13 @@ const Login = () => {
     return (
 
         <Container>
-            <h2>Please Login here</h2>
+
             <Form className='' onSubmit={handleSubmit}>
 
 
-                <Form.Group className="mb-3 col col-md-4 mx-auto" controlId="formBasicEmail">
+                <Form.Group className="mb-3 col col-md-4 mx-auto mt-3" controlId="formBasicEmail">
+                    <Form.Label className='h2 mb-3'>Please Login Here</Form.Label>
+                    <br />
                     <Form.Label>Your Email</Form.Label>
                     <Form.Control name='email' type="email" placeholder="Email" />
 
