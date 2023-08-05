@@ -146,42 +146,45 @@ const Header = () => {
                             {
                                 user?.uid
                                     ?
-                                    <div className='d-md-flex align-items-center'>
+                                    <div className='d-flex flex-column align-items-start'>
+                                        <div className=' d-flex align-items-center justify-content-start mb-2'>
+                                            <span className='fw-semibold me-2 p-2 w-50'>Welcome, {user?.displayName}</span>
+                                            {console.log(user)}
+                                            <div className='w-25 '>
+                                                {user?.photoURL
 
-                                        <span className='fw-semibold me-2'>Welcome, {user?.displayName}</span>
-                                        {console.log(user)}
-                                        <div className='me-2'>
-                                            {user?.photoURL
+                                                    ?
+                                                    // for tooltip use OverlayTrigger element
+                                                    <OverlayTrigger
+                                                        placement="right"
+                                                        delay={{ show: 250, hide: 400 }}
+                                                        overlay={renderTooltip}
 
-                                                ?
-                                                // for tooltip use OverlayTrigger element
-                                                <OverlayTrigger
-                                                    placement="right"
-                                                    delay={{ show: 250, hide: 400 }}
-                                                    overlay={renderTooltip}
+                                                    >
 
-                                                >
+                                                        <NavLink to='/profile'>
+                                                            <Image
+                                                                style={{ height: '40px' }}
+                                                                roundedCircle
+                                                                src={user?.photoURL}>
 
-                                                    <NavLink to='/profile'>
-                                                        <Image
-                                                            style={{ height: '40px' }}
-                                                            roundedCircle
-                                                            src={user?.photoURL}>
+                                                            </Image>
+                                                        </NavLink>
 
-                                                        </Image>
-                                                    </NavLink>
+                                                    </OverlayTrigger>
 
-                                                </OverlayTrigger>
+                                                    : <FontAwesomeIcon icon={faUserTie}></FontAwesomeIcon>
+                                                }
+                                            </div>
 
-                                                : <FontAwesomeIcon icon={faUserTie}></FontAwesomeIcon>
-                                            }
                                         </div>
+
 
 
 
                                         {/* <Button onClick={handleLogOut} className='ms-2 fw-semibold' variant='dark'>Logout</Button> */}
 
-                                        <Button onClick={handleLogOut} className=' fw-semibold' variant='dark'><FontAwesomeIcon icon={faSignOutAlt} className='me-2'></FontAwesomeIcon>Logout</Button>
+                                        <Button onClick={handleLogOut} className='ms-2 fw-semibold' variant='dark'><FontAwesomeIcon icon={faSignOutAlt} className='me-2'></FontAwesomeIcon>Logout</Button>
 
 
 

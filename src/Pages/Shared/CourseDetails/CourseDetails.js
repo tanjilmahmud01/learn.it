@@ -88,7 +88,7 @@ const CourseDetails = () => {
 
 
 
-                        <Link className="btn btn-primary btn-lg mt-2" to={`/checkout/${selectedCourse.course_id}`}>Checkout</Link>
+                        <Link className="btn btn-primary btn-lg mt-2" to={`/checkout/${selectedCourse.course_id}`}>Get Premium Access</Link>
                     </div>
 
                     <div className="col">

@@ -18,8 +18,6 @@ const PrivateRoute = ({ children }) => {
                     <Spinner className='' animation="border" variant="primary" />
                 </div>
 
-
-
             </div>
 
         );
