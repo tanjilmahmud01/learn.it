@@ -25,7 +25,7 @@ const CourseDetails = () => {
         </Tooltip>
     );
 
-    const ref = useRef();
+    const ref = useRef(); // for tracking the div for printing pdf
 
 
     return (
@@ -45,13 +45,15 @@ const CourseDetails = () => {
 
 
 
-
+                            {/* react-to-pdf package component */}
                             <Pdf targetRef={ref} filename='course_details.pdf'>
                                 {({ toPdf }) => (
+
+                                    //tooltip component
                                     <OverlayTrigger placement="right"
                                         delay={{ show: 250, hide: 400 }}
                                         overlay={renderTooltip}>
-                                        <button onClick={toPdf} >
+                                        <button className='btn btn-warning' onClick={toPdf} >
                                             <FontAwesomeIcon icon={faDownload}></FontAwesomeIcon>
                                         </button>
                                     </OverlayTrigger>
@@ -86,7 +88,7 @@ const CourseDetails = () => {
 
 
 
-                        <Link className="btn btn-primary btn-lg mt-2" to=''>Checkout</Link>
+                        <Link className="btn btn-primary btn-lg mt-2" to={`/checkout/${selectedCourse.course_id}`}>Checkout</Link>
                     </div>
 
                     <div className="col">

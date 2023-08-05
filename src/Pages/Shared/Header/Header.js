@@ -15,6 +15,8 @@ import { GoogleAuthProvider } from 'firebase/auth';
 
 
 
+
+
 const Header = () => {
 
 
@@ -58,14 +60,20 @@ const Header = () => {
             <Navbar className='container bg-white' collapseOnSelect expand="lg" bg="light" variant="light">
 
                 <Container className='shadow bg-body-tertiary rounded'>
-                    <Navbar.Brand className='' href="#home">
 
-                        <img
-                            src={logo}
-                            className="d-inline-block align-top logo-img"
-                            alt="React Bootstrap logo"
-                        />
+                    <Navbar.Brand className='' href="#home">
+                        <Link to='/'>
+                            <img
+                                src={logo}
+                                className="d-inline-block align-top logo-img"
+                                alt="Learn.IT logo"
+                            />
+                        </Link>
+
                     </Navbar.Brand>
+
+
+
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -138,10 +146,11 @@ const Header = () => {
                             {
                                 user?.uid
                                     ?
-                                    <div className='d-flex flex-column flex-md-row align-items-center jusify-content-between'>
+                                    <div className='d-md-flex align-items-center'>
 
-                                        <span className='fw-semibold me-2 mb-2'>Welcome, {user?.displayName}</span>
-                                        <div className='mb-2'>
+                                        <span className='fw-semibold me-2'>Welcome, {user?.displayName}</span>
+                                        {console.log(user)}
+                                        <div className='me-2'>
                                             {user?.photoURL
 
                                                 ?
@@ -157,7 +166,7 @@ const Header = () => {
                                                         <Image
                                                             style={{ height: '40px' }}
                                                             roundedCircle
-                                                            src={user.photoURL}>
+                                                            src={user?.photoURL}>
 
                                                         </Image>
                                                     </NavLink>
@@ -172,7 +181,7 @@ const Header = () => {
 
                                         {/* <Button onClick={handleLogOut} className='ms-2 fw-semibold' variant='dark'>Logout</Button> */}
 
-                                        <Button onClick={handleLogOut} className='ms-2 fw-semibold' variant='dark'><FontAwesomeIcon icon={faSignOutAlt} className='me-2'></FontAwesomeIcon>Logout</Button>
+                                        <Button onClick={handleLogOut} className=' fw-semibold' variant='dark'><FontAwesomeIcon icon={faSignOutAlt} className='me-2'></FontAwesomeIcon>Logout</Button>
 
 
 
@@ -220,6 +229,8 @@ const Header = () => {
                 </Container>
 
             </Navbar>
+
+
 
             {/* <Navbar className='container mt-3 border rounded' style={myStyle} expand="lg" variant='light'>
                 <Container className=''>
