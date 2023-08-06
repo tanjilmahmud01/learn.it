@@ -120,7 +120,7 @@ const Header = () => {
                                         to="/courses"
                                         className="dropdown-option-no-underline"
                                     >
-                                        See All Courses
+                                        See All Categories
                                     </Link>
                                 </NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">

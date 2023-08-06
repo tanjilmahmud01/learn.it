@@ -10,8 +10,8 @@ const CourseCard = ({ course }) => {
 
     return (
         <div>
-            <Card>
-                <Card.Img variant="top" src={course_banner} />
+            <Card className=''>
+                <Card.Img className='' variant="top" src={course_banner} />
                 <Card.Body>
                     <Card.Title>{course_title}</Card.Title>
                     <Card.Text>

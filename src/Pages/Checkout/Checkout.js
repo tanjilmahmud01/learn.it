@@ -6,7 +6,7 @@ import StarRatings from 'react-star-ratings';
 const Checkout = () => {
 
     const checkedOutCourse = useLoaderData();
-
+    console.log(checkedOutCourse);
 
 
     return (

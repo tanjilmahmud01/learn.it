@@ -155,7 +155,8 @@ const Login = () => {
 
 
                     <Form.Text className="text-danger">
-                        {error}
+                        <h6 className='mt-2'>Oops! Something's not right! Error Details: {error}</h6>
+
                     </Form.Text>
                 </Form.Group>
 

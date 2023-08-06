@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CourseCard from '../Shared/CourseCard/CourseCard';
 import { Carousel, Col, Container, Row } from 'react-bootstrap';
+import BannerCarousel from '../Shared/BannerCarousel/BannerCarousel';
 
 
 const Home = () => {
@@ -14,6 +15,9 @@ const Home = () => {
 
 
             <Container>
+                <div className=''>
+                    <BannerCarousel></BannerCarousel>
+                </div>
 
                 <Row className=''>
                     {
