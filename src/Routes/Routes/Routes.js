@@ -10,6 +10,7 @@ import CourseDetails from "../../Pages/Shared/CourseDetails/CourseDetails";
 import Checkout from "../../Pages/Checkout/Checkout";
 import PrivateRoute from "../PrivateRoutes/PrivateRoute";
 import Error from "../../Pages/Shared/Error/Error";
+import Blog from "../../Pages/Shared/Blog/Blog";
 
 
 export const routes = createBrowserRouter([
@@ -42,8 +43,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/blog',
-                element: '',
-                loader: ''
+                element: <Blog></Blog>
+
             },
             {
                 path: '/category/:id',

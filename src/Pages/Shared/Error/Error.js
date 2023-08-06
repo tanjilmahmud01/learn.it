@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Error = () => {
     return (
-        <div className='container d-md-flex flex-column-reverse'>
+        <div className='container d-md-flex flex-md-column-reverse'>
 
 
             <img className='img-fluid border border-danger' src={pic1} alt="" />
