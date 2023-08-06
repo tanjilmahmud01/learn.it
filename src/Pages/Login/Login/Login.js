@@ -84,13 +84,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 setError('');
-                if (user.emailVerified) {
-                    navigate(from, { replace: true })
-                }
 
-                else {
-                    toast.error('Your Email is not verfied. Please verify your email address')
-                }
             })
             .catch(error => {
                 console.error(error);
@@ -155,7 +149,7 @@ const Login = () => {
 
 
                     <Form.Text className="text-danger">
-                        <h6 className='mt-2'>Oops! Something's not right! Error Details: {error}</h6>
+                        <h6>{error}</h6>
 
                     </Form.Text>
                 </Form.Group>

@@ -15,10 +15,10 @@ const Home = () => {
 
 
             <Container>
-                <div className=''>
+                <div className='mb-2'>
                     <BannerCarousel></BannerCarousel>
                 </div>
-
+                <h2>Choose from our popular courses: </h2>
                 <Row className=''>
                     {
                         allCourses.map(course => {

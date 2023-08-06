@@ -29,7 +29,7 @@ const Blog = () => {
                     <Accordion.Header>What is Node? How does Node work?</Accordion.Header>
                     <Accordion.Body>
                         Node.js (Node) is an open source, cross-platform runtime environment for executing JavaScript code. Node is used extensively for server-side programming, making it possible for developers to use JavaScript for client-side and server-side code without needing to learn an additional language. Node is sometimes referred to as a programming language or software development framework, but neither is true; it is <strong> strictly a JavaScript runtime.</strong>
-
+                        <br />
                         Node incorporates the V8 JavaScript engine, the same one used in Google Chrome and other browsers. It is written in C++ and can run on macOS, Linux, Windows and other systems. The engine parses and executes JavaScript code. It can operate independently of a browser environment, either embedded in a C++ application or implemented as a standalone program.
                     </Accordion.Body>
                 </Accordion.Item>
