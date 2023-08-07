@@ -92,7 +92,7 @@ const Header = () => {
                             </NavLink>
 
                             <NavLink
-                                to="/register"
+                                to="/faq"
                                 className={({ isActive, isPending }) =>
                                     isPending ? "nav-link hover-underline-animation" : isActive ? "nav-link active fw-semibold text-success" : "nav-link hover-underline-animation fw-semibold text-secondary me-2"
                                 }
@@ -124,12 +124,27 @@ const Header = () => {
                                     </Link>
                                 </NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">
-                                    Another action
+                                    <Link
+                                        to="/blog"
+                                        className="dropdown-option-no-underline"
+                                    >
+                                        Blog
+                                    </Link>
                                 </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3"><Link
+                                    to="/faq"
+                                    className="dropdown-option-no-underline"
+                                >
+                                    FAQ
+                                </Link></NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="#action/3.4">
-                                    Separated link
+                                    <Link
+                                        to="/login"
+                                        className="dropdown-option-no-underline"
+                                    >
+                                        Login
+                                    </Link>
                                 </NavDropdown.Item>
                             </NavDropdown>
                         </Nav>

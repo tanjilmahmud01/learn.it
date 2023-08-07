@@ -11,6 +11,7 @@ import Checkout from "../../Pages/Checkout/Checkout";
 import PrivateRoute from "../PrivateRoutes/PrivateRoute";
 import Error from "../../Pages/Shared/Error/Error";
 import Blog from "../../Pages/Shared/Blog/Blog";
+import Faq from "../../Pages/Shared/Faq/Faq";
 
 
 export const routes = createBrowserRouter([
@@ -38,8 +39,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/faq',
-                element: '',
-                loader: ''
+                element: <Faq></Faq>
+
             },
             {
                 path: '/blog',

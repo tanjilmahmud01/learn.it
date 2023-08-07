@@ -5,10 +5,16 @@ import Footer from '../../Pages/Shared/Footer/Footer';
 
 const Main = () => {
     return (
-        <div>
+        <div >
             <Header></Header>
+
             <Outlet></Outlet>
+
+
+
             <Footer></Footer>
+
+
 
         </div>
     );
