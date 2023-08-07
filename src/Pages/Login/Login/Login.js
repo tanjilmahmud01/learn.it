@@ -16,7 +16,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 const Login = () => {
 
     const [error, setError] = useState('');
-    const { signIn, setLoading, providerLogin } = useContext(AuthContext);
+    const { signIn, setLoading, providerLogin, setUser } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -34,11 +34,13 @@ const Login = () => {
                 form.reset();
                 setError('');
                 if (user.emailVerified) {
+                    setUser(result.user)
                     navigate(from, { replace: true })
                 }
 
                 else {
-                    toast.error('Your Email is not verfied. Please verify your email address')
+                    toast.error('Your Email is not verfied. Please verify your email address');
+                    setUser(null);
                 }
             })
             .catch(error => {

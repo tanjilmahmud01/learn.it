@@ -188,7 +188,11 @@ const Header = () => {
 
                                                     </OverlayTrigger>
 
-                                                    : <FontAwesomeIcon icon={faUserTie}></FontAwesomeIcon>
+                                                    :
+                                                    <NavLink to='/profile'>
+                                                        <FontAwesomeIcon icon={faUserTie}></FontAwesomeIcon>
+                                                    </NavLink>
+
                                                 }
                                             </div>
 

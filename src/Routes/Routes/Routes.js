@@ -23,19 +23,19 @@ export const routes = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: async () => {
-                    return fetch('http://localhost:5000/courses');
+                    return fetch('https://web-learning-server-nine.vercel.app/courses');
                 }
             },
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/07`)
+                loader: ({ params }) => fetch(`https://web-learning-server-nine.vercel.app/category/07`)
 
             },
             {
                 path: '/course-details/:id',
                 element: <CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://web-learning-server-nine.vercel.app/courses/${params.id}`)
             },
             {
                 path: '/faq',
@@ -50,7 +50,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/category/:id',
                 element: <CourseByCategory></CourseByCategory>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://web-learning-server-nine.vercel.app/category/${params.id}`)
             },
             {
                 path: '/login',
@@ -67,7 +67,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/checkout/:id',
                 element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://web-learning-server-nine.vercel.app/courses/${params.id}`)
             },
             {
                 path: "*",

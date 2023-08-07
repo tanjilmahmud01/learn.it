@@ -14,7 +14,7 @@ const Register = () => {
     const [error, setError] = useState('');
     const [accepted, setAccepted] = useState(false);
 
-    const { createUser, verifyEmail, updateUserProfile } = useContext(AuthContext);
+    const { createUser, verifyEmail, updateUserProfile, setUser } = useContext(AuthContext);
 
 
     const handleSubmit = event => {
@@ -34,7 +34,7 @@ const Register = () => {
                 handleUpdateUserProfile(name, photoURL);
                 handleEmailVerification();
                 toast.success('A verfication Email has been sent to your email address. Please check and confirm your inbox and spam folder.')
-
+                setUser(null);
             })
             .catch(error => {
                 setError(error.message)

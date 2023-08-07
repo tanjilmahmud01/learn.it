@@ -1,5 +1,5 @@
 import React from 'react';
-import './Faq.css';
+import './Faq.modular.css';
 import { Accordion } from 'react-bootstrap';
 
 const Faq = () => {
@@ -10,7 +10,7 @@ const Faq = () => {
             <p className='lead'>Learn.IT aims to provide a online tutorial solution to all technologies related to web development. Some of the most asked questions are answered here for everyone's convenience.</p>
 
             <div>
-                <ul>
+                <ul style={{ listStyle: "disc" }}>
                     <li>How to register for a course?</li>
                     <li>How many hours are needed to finish the course?</li>
                     <li>How are the course performance evaluated?</li>

@@ -14,7 +14,7 @@ const CourseDetails = () => {
     const [selectedCategory, setSelectedCategory] = useState('');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/course-categories/${selectedCourse.category_id}`)
+        fetch(`https://web-learning-server-nine.vercel.app/course-categories/${selectedCourse.category_id}`)
             .then(res => res.json())
             .then(data => setSelectedCategory(data))
     }, []);
