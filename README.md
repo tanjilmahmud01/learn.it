@@ -5,6 +5,7 @@ This website was an assignment to implement authentication using Firebase Authen
 ## Live Link
 
 https://web-learning-22487.web.app/
+[Learn.IT](https://web-learning-22487.web.app/)
 
 ### Features
 + Firebase Authentication for login using an Email id and Password or using a Google/GitHub account
@@ -13,6 +14,8 @@ https://web-learning-22487.web.app/
 + Giving the user's opportunity to change their Profile name and picture after login
 + Protecting certain views from non-logged-in users, redirecting them to the login/register page
 + Creating a screenshot-like downloadable PDF view of the webpage using the React-to-pdf package.
++ Responsive Mobile and Tablet View
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
