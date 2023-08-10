@@ -3,8 +3,6 @@
 This website was an assignment to implement authentication using Firebase Authentication.
 
 ## Live Link
-
-https://web-learning-22487.web.app/
 [Learn.IT](https://web-learning-22487.web.app/)
 
 ### Features
@@ -15,6 +13,12 @@ https://web-learning-22487.web.app/
 + Protecting certain views from non-logged-in users, redirecting them to the login/register page
 + Creating a screenshot-like downloadable PDF view of the webpage using the React-to-pdf package.
 + Responsive Mobile and Tablet View
+
+### Used libraries and Framework
++ React
++ React-bootstrap for responsive web design
++ React-to-pdf for screenshotting a web view
++ 
 
 
 Runs the app in the development mode.\
