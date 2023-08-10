@@ -1,12 +1,14 @@
-# Getting Started with Create React App
+# Learn.IT (Programming Hero B6 Assignment 10)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This website was an assignment to implement authentication using Firebase Authentication.
 
-## Available Scripts
+## Live Link
 
-In the project directory, you can run:
+https://web-learning-22487.web.app/
 
-### `npm start`
+### Features
++ Firebase Authentication for login using an Email id and Password or using a Goggle/GitHub account
++ 
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
