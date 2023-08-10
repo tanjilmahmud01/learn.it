@@ -7,7 +7,11 @@ This website was an assignment to implement authentication using Firebase Authen
 https://web-learning-22487.web.app/
 
 ### Features
-+ Firebase Authentication for login using an Email id and Password or using a Goggle/GitHub account
++ Firebase Authentication for login using an Email id and Password or using a Google/GitHub account
++ Using environment variables to hide Firebase Authentication configuration details
++ Deploying the backend data and backend code in Vercel
++ Giving the user's opportunity to change their Profile name and picture after login
++ Protecting certain views from non-logged in users, redirecting them to login/register page
 + 
 
 Runs the app in the development mode.\
