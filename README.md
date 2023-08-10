@@ -11,8 +11,8 @@ https://web-learning-22487.web.app/
 + Using environment variables to hide Firebase Authentication configuration details
 + Deploying the backend data and backend code in Vercel
 + Giving the user's opportunity to change their Profile name and picture after login
-+ Protecting certain views from non-logged in users, redirecting them to login/register page
-+ 
++ Protecting certain views from non-logged-in users, redirecting them to the login/register page
++ Creating a screenshot-like downloadable PDF view of the webpage using the React-to-pdf package.
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
