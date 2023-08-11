@@ -16,7 +16,7 @@ This website was an assignment to implement an authentication feature using Fire
 + Responsive Mobile and Tablet View
 + Deployment of the backend data in Vercel and front end in Firebase Hosting
 
-### Used libraries and Framework
+### Libraries and Framework Used
 + Firebase Authentication and Firebase Hosting
 + React for UI design
 + React-bootstrap for responsive web design
