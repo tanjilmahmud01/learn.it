@@ -1,6 +1,6 @@
-# Learn.IT (Programming Hero B6 Assignment 10)
+# Learn.IT (A basic React.js project implementing Private Route)
 
-This website was an assignment to implement an authentication feature using Firebase Authentication.
+This website was an assignment from Programming Hero to implement an authentication feature using Firebase Authentication.
 
 ## Live Link
 [Learn.IT](https://web-learning-22487.web.app/) (https://web-learning-22487.web.app/)
